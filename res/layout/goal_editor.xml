@@ -1,0 +1,360 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" 
+    android:padding="10dip">
+
+    <ScrollView
+        android:id="@+id/scrollView1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#FFFFFF" >
+
+        <LinearLayout
+            android:id="@+id/linearLayout1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="2dip"
+            android:focusable="true" >
+
+            <TextView
+                android:id="@+id/textView1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingTop="@dimen/padding_small"
+                android:text="@string/habbit" />
+
+            <EditText
+                android:id="@+id/habbitTxt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="@string/habbitHint" >
+
+                <requestFocus />
+            </EditText>
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingTop="@dimen/padding_small"
+                android:text="@string/duration" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical" >
+
+                <SeekBar
+                    android:id="@+id/durationSeekBar"
+                    android:layout_width="0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:max="@integer/durationMax"
+                    android:progress="@integer/durationMin" />
+
+                <TextView
+                    android:id="@+id/durationWeeksTxt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/weeks"
+                    android:textSize="16sp" />
+            </LinearLayout>
+			<LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal" >
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="@dimen/padding_small"
+                    android:text="@string/start_on" />
+            <TextView
+                android:id="@+id/startDateTxt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="@dimen/padding_small"
+                    android:visibility="gone" />
+            </LinearLayout>
+            
+            <LinearLayout
+                android:id="@+id/startDateLL"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center_vertical" >
+
+                <RadioGroup
+                    android:id="@+id/radioGroup"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal" >
+
+                    <RadioButton
+                        android:id="@+id/todayRadio"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="true"
+                        android:text="@string/today"
+                        android:button="@null"
+                        android:background="@android:color/transparent"
+                        android:drawableLeft="@drawable/selector_radio_check"
+                        android:layout_marginRight="10dip"
+                         />
+                    
+                    <RadioButton
+                        android:id="@+id/tomorrowRadio"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="false"
+                        android:text="@string/tomorrow"
+                        android:button="@null"
+                        android:background="@android:color/transparent"
+                        android:drawableLeft="@drawable/selector_radio_check"
+                        android:layout_marginRight="10dip" />
+
+                    <RadioButton
+                        android:id="@+id/nextWeekRadio"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/next_week"
+                        android:button="@null"
+                        android:background="@android:color/transparent"
+                        android:drawableLeft="@drawable/selector_radio_check"
+                         />
+
+                </RadioGroup>
+
+            </LinearLayout>
+            
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingTop="@dimen/padding_small"
+                android:text="@string/repeatMode" />
+            
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical" >
+
+                
+
+                <RadioGroup
+                    android:id="@+id/radioGroup2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal" >
+
+                    <RadioButton
+                        android:id="@+id/everydayRadio"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="true"
+                        android:text="@string/everyday"
+                        android:button="@null"
+                        android:background="@android:color/transparent"
+                        android:drawableLeft="@drawable/selector_radio_check"
+                        android:layout_marginRight="10dip" />
+
+                    <RadioButton
+                        android:id="@+id/weekRadio"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/days_of_week"
+                        android:button="@null"
+                        android:background="@android:color/transparent"
+                        android:drawableLeft="@drawable/selector_radio_check"
+                         />
+
+                </RadioGroup>
+
+            </LinearLayout>
+            
+            <LinearLayout
+                android:id="@+id/weekdayLL"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical" 
+                android:visibility="gone">
+
+                <CheckedTextView
+                    android:id="@+id/monChkTxt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/monday" 
+                    android:textColor="@drawable/selector_text_color"
+                    android:padding="5dip"
+                    android:checked="true"
+                    android:clickable="true"
+                    android:onClick="toggle"/>
+
+                <CheckedTextView
+                    android:id="@+id/tueChkTxt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="true"
+                    android:padding="5dip"
+                    android:text="@string/tuesday"
+                    android:textColor="@drawable/selector_text_color" 
+                    android:clickable="true"
+                    android:onClick="toggle"/>
+
+                <CheckedTextView
+                    android:id="@+id/wenChkTxt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="true"
+                    android:padding="5dip"
+                    android:text="@string/wednesday"
+                    android:textColor="@drawable/selector_text_color" 
+                    android:clickable="true"
+                    android:onClick="toggle"/>
+
+                <CheckedTextView
+                    android:id="@+id/thuChkTxt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="true"
+                    android:padding="5dip"
+                    android:text="@string/thursday"
+                    android:textColor="@drawable/selector_text_color" 
+                    android:clickable="true"
+                    android:onClick="toggle"/>
+
+                <CheckedTextView
+                    android:id="@+id/friChkTxt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="true"
+                    android:padding="5dip"
+                    android:text="@string/friday"
+                    android:textColor="@drawable/selector_text_color" 
+                    android:clickable="true"
+                    android:onClick="toggle"/>
+
+                <CheckedTextView
+                    android:id="@+id/satChkTxt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="5dip"
+                    android:text="@string/saturday"
+                    android:textColor="@drawable/selector_text_color" 
+                    android:clickable="true"
+                    android:onClick="toggle"/>
+
+                <CheckedTextView
+                    android:id="@+id/sunChkTxt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="5dip"
+                    android:text="@string/sunday"
+                    android:textColor="@drawable/selector_text_color" 
+                    android:clickable="true"
+                    android:onClick="toggle"/>
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/textView3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingTop="@dimen/padding_small"
+                android:text="@string/won_condition" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical" >
+
+                <SeekBar
+                    android:id="@+id/conditionSeekBar"
+                    android:layout_width="0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:max="@integer/conditionMax"
+                    android:progress="@integer/conditionMin" />
+
+                <TextView
+                    android:id="@+id/conditionTxt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/percentage"
+                    android:textSize="16sp" />
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingTop="@dimen/padding_small"
+                android:text="@string/set_alarm_title" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical" 
+                >
+
+                <CheckBox
+                    android:id="@+id/setAlarmChk"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/set_alarm" 
+                    android:layout_marginRight="10dip"
+                    android:button="@null"
+                        android:background="@android:color/transparent"
+                    android:drawableLeft="@drawable/selector_button_check"/>
+                
+                <TextView
+                    android:id="@+id/alarmTimeTxt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dip"
+                    android:text="@string/alarm_time_not_set"
+                    android:textSize="16sp"
+                    android:textColor="@color/text_light_blue" />
+                
+            </LinearLayout>
+            
+            <TextView
+                android:id="@+id/textView4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingTop="@dimen/padding_small"
+                android:text="@string/auto_share" />
+            
+            
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:layout_marginBottom="10dip" >
+
+                <CheckBox
+                    android:id="@+id/twitterChk"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/twitter"
+                    android:button="@null"
+                        android:background="@android:color/transparent"
+                    android:drawableLeft="@drawable/selector_button_check"
+                    android:layout_marginRight="10dip" />
+                
+                <CheckBox
+                    android:id="@+id/facebookChk"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/facebook"
+                    android:button="@null"
+                        android:background="@android:color/transparent"
+                    android:drawableLeft="@drawable/selector_button_check" />
+                
+            </LinearLayout>
+            <include layout="@layout/button_panel" />
+
+        </LinearLayout>
+
+    </ScrollView>
+</LinearLayout>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <integer name="durationMax">20</integer>
+    <integer name="durationMin">1</integer>
+    <integer name="conditionMax">50</integer>
+    <integer name="conditionMin">25</integer>
+</resources>
